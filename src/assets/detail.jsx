@@ -26,7 +26,7 @@ export default function Detail() {
             <div className="container mx-auto flex flex-wrap my-16">
                 <div className="w-full lg:w-1/2 flex justify-center p-6 overflow-hidden group transition-transform transform hover:scale-105">
                     <img
-                        className="object-cover object-center w-full xl:w-1/2 rounded-xl transition-transform transform group-hover:scale-104 hover:shadow-lg"
+                        className="object-cover object-center w-full sm:w-1/2 lg:w-2/3 lg:h-80 xl:h-96 rounded-xl transition-transform transform group-hover:scale-104 hover:shadow-lg"
                         src={`/img/${data.Name}.jpg`}
                         onError={(e) => {
                             e.target.src = '/img/default.png';
