@@ -31,7 +31,7 @@ export default function Home() {
 
                     <nav id="store" className="w-full z-30 top-0 px-6 py-1 pb-0">
                         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2">
-                            <a className="uppercase tracking-wide title no-underline hover:no-underline font-bold text-gray-800 text-2xl" href="#">
+                            <a className="uppercase tracking-wide title no-underline hover:no-underline font-semibold text-gray-800 text-2xl" href="#">
                                 Burmese Recipes
                             </a>
                            
@@ -51,7 +51,7 @@ export default function Home() {
                                         alt={item.Name}
                                     />
                                     <div className="py-4 px-2 flex items-center justify-between">
-                                        <p className="">{item.Name}</p>
+                                        <p className="font-semibold text-md title">{item.Name}</p>
                                     </div>
                                 </a>
                             </div>
@@ -60,7 +60,7 @@ export default function Home() {
                     <div className='container mx-auto flex justify-start'>
                         <div className="flex flex-wrap gap-y-5 px-4">
                             <button
-                                className={`mx-2 py-2 px-4 rounded ${currentPage === 1 ? 'bg-gray-300 text-gray-800' : 'bg-gray-800 text-white'}`}
+                                className={`mx-2 py-2 px-4 rounded-full ${currentPage === 1 ? 'bg-gray-300 text-gray-800' : 'bg-gray-800 text-white'}`}
                                 onClick={handlePrevPage}
                                 disabled={currentPage === 1}
                             >
@@ -70,7 +70,7 @@ export default function Home() {
                             {Array.from({ length: totalPages }, (_, index) => (
                                 <button
                                     key={index}
-                                    className={`mx-2 py-2 px-4 rounded ${currentPage === index + 1 ? 'bg-gray-800 text-white' : 'bg-gray-300 text-gray-800'}`}
+                                    className={`mx-2 py-2 px-4 rounded-full ${currentPage === index + 1 ? 'bg-gray-800 text-white' : 'bg-gray-300 text-gray-800'}`}
                                     onClick={() => handlePageChange(index + 1)}
                                 >
                                     {index + 1}
@@ -78,7 +78,7 @@ export default function Home() {
                             ))}
 
                             <button
-                                className={`mx-2 py-2 d-flex  px-4 rounded ${currentPage === totalPages ? 'bg-gray-300 text-gray-800' : 'bg-gray-800 text-white'}`}
+                                className={`mx-2 py-2 d-flex  px-4 rounded-full ${currentPage === totalPages ? 'bg-gray-300 text-gray-800' : 'bg-gray-800 text-white'}`}
                                 onClick={handleNextPage}
                                 disabled={currentPage === totalPages}
                             >
