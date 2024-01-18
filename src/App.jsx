@@ -1,19 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
-import Home from './assets/home'
-import { Routes,Route } from 'react-router-dom'
-import Detail from './assets/detail'
+import Home from './components/home'
+import { Routes, Route } from 'react-router-dom'
+import Detail from './components/detail'
+import Loader from './components/Loader'
 
 function App() {
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000)
+    return () => clearTimeout(timeout);
+  }, [])
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/detail/:guid/*' element={<Detail/>}></Route>
-      </Routes>
+      {loading ? <Loader /> :
+
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/detail/:guid/*' element={<Detail />}></Route>
+        </Routes>
+      }
     </>
   )
 }
