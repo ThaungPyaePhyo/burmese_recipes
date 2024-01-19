@@ -19,8 +19,8 @@ function App() {
       {loading ? <Loader /> :
 
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/detail/:guid/*' element={<Detail />}></Route>
+          <Route path='/' element={<Home />}/>
+          <Route path='/detail/:guid/*' element={<Detail />}/>
         </Routes>
       }
     </>

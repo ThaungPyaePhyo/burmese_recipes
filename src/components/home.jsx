@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BurmeseRecipes from "../../BurmeseRecipes.json";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const itemsPerPage = 8;
 
@@ -45,10 +45,8 @@ export default function Home() {
             <div className="container mx-auto flex flex-wrap pb-8">
                 {currentItems.map((item, index) => (
                     <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col lg:my-3" key={index}>
-                        <a href="#" className='bg-slate-200 rounded-lg overflow-hidden group transition-transform transform hover:scale-105'
-                            onClick={() => clickHandler(item.Guid)}
-                        >
-                            <img
+                        <Link to={`/detail/${item.Guid}`} className="bg-slate-200 rounded-lg overflow-hidden group transition-transform transform hover:scale-105">
+                           <img
                                 className="object-cover object-center w-full h-48 transition-transform transform group-hover:scale-110"
                                 src={`img/${item.Name}.jpg`}
                                 onError={(e) => {
@@ -59,7 +57,7 @@ export default function Home() {
                             <div className="py-4 px-2 flex items-center justify-between">
                                 <p className="font-semibold text-md title">{item.Name}</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>
